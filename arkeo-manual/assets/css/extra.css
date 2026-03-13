@@ -1,0 +1,28 @@
+figcaption {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.5rem;
+}
+
+/* Accessory two-column layout */
+.accessory-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.accessory-text {
+  flex: 3;   /* 75% */
+}
+
+.accessory-image {
+  flex: 1;   /* 25% */
+  text-align: center;
+}
+
+.accessory-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

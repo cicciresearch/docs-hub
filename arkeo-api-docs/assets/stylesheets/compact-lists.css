@@ -1,0 +1,6 @@
+/* Reduce spacing between list items */
+.md-typeset ul li,
+.md-typeset ol li {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}

@@ -1,0 +1,41 @@
+/* Force compact table layout — overrides Material defaults */
+
+:root {
+  --md-table-cell-padding-x: 6px;
+  --md-table-cell-padding-y: 2px;
+  --md-code-font-size: 0.8em;
+}
+
+/* Increase selector specificity so it overrides Material defaults */
+.md-typeset .compact-table table,
+.md-typeset table {
+  margin: 0.2em 0 !important;
+  border-collapse: collapse !important;
+  font-size: 0.85em !important;
+  line-height: 1.2 !important;
+}
+
+.md-typeset .compact-table table th,
+.md-typeset .compact-table table td,
+.md-typeset table th,
+.md-typeset table td {
+  padding: 2px 6px !important;
+  vertical-align: top !important;
+}
+
+/* Ensure inline code within tables doesn't expand cell height */
+.md-typeset table code {
+  font-size: 0.8em !important;
+  padding: 0 2px !important;
+}
+
+/* Optional: subtle zebra striping for better readability
+.md-typeset table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+} */
+
+/* Optional: add light borders without increasing spacing */
+.md-typeset table th,
+.md-typeset table td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
