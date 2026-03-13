@@ -1,0 +1,6 @@
+.device-gallery .md-typeset img {
+    max-height: 400px;   /* choose your height */
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
