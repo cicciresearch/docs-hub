@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cicci Research Documentation</title>
+
+<style>
+body{
+font-family: Arial;
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+border-radius:8px;
+text-decoration:none;
+color:black;
+transition:0.2s;
+}
+
+.card:hover{
+border-color:#3f51b5;
+transform:translateY(-3px);
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Cicci Research Documentation</h1>
+
+<p>Select a manual:</p>
+
+<div class="grid">
+
+<a class="card" href="/arkeo-manual/">
+<h3>ARKEO Manual</h3>
+<p>Main documentation for the ARKEO testing platform.</p>
+</a>
+
+<a class="card" href="/arkeo-api/">
+<h3>ARKEO API</h3>
+<p>API reference for the ARKEO testing platform.</p>
+</a>
+
+<a class="card" href="/arkeo-multichannel-manual/">
+<h3>ARKEO Multichannel Manual</h3>
+<p>Documentation for the multichannel system.</p>
+</a>
+
+<a class="card" href="/arkeo-multichannel-api-docs/">
+<h3>ARKEO Multichannel API Manual</h3>
+<p>API reference for the multichannel system.</p>
+</a>
+
+</div>
+
+</body>
+</html>
