@@ -5,6 +5,8 @@
       
       
       
+        <link rel="canonical" href="https://docs.cicciresearch.it/arkeo-multichannel-manual/software/sensors/sensor/">
+      
       
         <link rel="prev" href="../../data/tracking-file/">
       
@@ -57,6 +59,8 @@
       <link rel="stylesheet" href="../../../assets/css/compact-tables.css">
     
       <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1135,6 +1139,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#supported-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humidity-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Humidity Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luminosity-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luminosity Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oxygen-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oxygen Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sensor-board-pinout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1316,6 +1381,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#supported-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humidity-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Humidity Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luminosity-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luminosity Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oxygen-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oxygen Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sensor-board-pinout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1348,9 +1474,94 @@
 <p>The Arkeo Multichannel software can manage analog and digital sensor as part of the measurements. This allows you to include the environment of the device into the data files. This can be especially important for the irradiance and temperature of the device, which greatly affect its performance.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/img/sensor-manager.png" data-desc-position="bottom"><img alt="sensor-manager" class="on-glb" src="../../../assets/img/sensor-manager.png"></a>
 Sensors are managed in the "Sensor Manager" window. It is accessed from the main windows with the "Sensors" button. Here you will see a list of all sensors currently configured for the system. To associate them to your device, see <a href="../environments/">environments</a>.</p>
-<h3 id="managing-sensors">Managing sensors<a class="headerlink" href="#managing-sensors" title="Permanent link">¶</a></h3>
-<p>Sensors from sample holder (managed by the <a href="../../sample-holder-tool/">sample holder tool</a>) are added automatically as they are added by the sample holder tool. To add a custom analog sensor, click on the + button and follow the instruction of the wizard. </p>
-<h3 id="sensor-board-pinout">Sensor Board Pinout<a class="headerlink" href="#sensor-board-pinout" title="Permanent link">¶</a></h3>
+<p>All sensors save their data at regular intervals to a dedicated save file. See <a href="../data-file/">Data File</a>.</p>
+<h2 id="managing-sensors">Managing sensors<a class="headerlink" href="#managing-sensors" title="Permanent link">¶</a></h2>
+<p>Sensors from sample holder (managed by the <a href="../../sample-holder-tool/">sample holder tool</a>) are added automatically as they are added by the sample holder tool. To add a custom analog sensor, click on the + button and follow the instruction of the wizard.  </p>
+<p>Generic sensors are available for the following parameters.</p>
+<ul>
+<li>Temperature</li>
+<li>Humidity</li>
+<li>Irradiance</li>
+<li>Oxygen</li>
+<li>CO2</li>
+</ul>
+<p>These sensors can be configured with a gain and offset according the following formula.
+$$
+\text{value} = V_{in} \cdot \text{gain} + \text{offset}
+$$
+Sensors with custom conversion functions can be requested.</p>
+<h2 id="supported-sensors">Supported Sensors<a class="headerlink" href="#supported-sensors" title="Permanent link">¶</a></h2>
+<p>The following specific sensors are avaible. Custom models can be included on request</p>
+<h3 id="temperature-sensors">Temperature Sensors<a class="headerlink" href="#temperature-sensors" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="generic" name="__tabbed_1" type="radio"><input id="sht3x-arp" name="__tabbed_1" type="radio"><input id="pt100" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="generic">Generic</label><label for="sht3x-arp">SHT3x-ARP</label><label for="pt100">PT100</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Any generic sensor with the following transfer function
+$$
+T(V) = \text{gain} \cdot V + \text{offset}
+$$</p>
+</div>
+<div class="tabbed-block">
+<p>Fully calibrated and linearized temperature sensor
+$$
+T(V) = 218.75 \cdot V/V_{DD} - 66.875
+$$</p>
+</div>
+<div class="tabbed-block">
+<p>Measure temperature with the Arkeo PT100 adapter board.</p>
+</div>
+</div>
+</div>
+<h3 id="humidity-sensors">Humidity Sensors<a class="headerlink" href="#humidity-sensors" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="generic_1" name="__tabbed_2" type="radio"><input id="sht3x-arp_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="generic_1">Generic</label><label for="sht3x-arp_1">SHT3x-ARP</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Any generic sensor with the following transfer function
+$$
+RH(V) = \text{gain} \cdot V + \text{offset}
+$$</p>
+</div>
+<div class="tabbed-block">
+<p>Fully calibrated, linearized, and temperature compensated sensor
+$$
+T(V) = 125 \cdot V/V_{DD} - 12.5
+$$</p>
+</div>
+</div>
+</div>
+<h3 id="luminosity-sensors">Luminosity Sensors<a class="headerlink" href="#luminosity-sensors" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="generic_2" name="__tabbed_3" type="radio"><input id="pyranometer" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="generic_2">Generic</label><label for="pyranometer">Pyranometer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Any generic sensor with the following transfer function
+$$
+P(V) = \text{gain} \cdot V + \text{offset}
+$$</p>
+</div>
+<div class="tabbed-block">
+<p>A pyranometer is a type of sensor used for measuring solar irradiance designed to measure the solar radiation flux density (W/m2) from the hemisphere above within a wavelength range 0.3 μm to 3 μm. 
+$$
+P(V) = \text{gain} \cdot V
+$$</p>
+</div>
+</div>
+</div>
+<h3 id="oxygen-sensors">Oxygen Sensors<a class="headerlink" href="#oxygen-sensors" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="generic_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="generic_3">Generic</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Any generic sensor with the following transfer function
+$$
+O_2(V) = \text{gain} \cdot V + \text{offset}
+$$</p>
+</div>
+</div>
+</div>
+<h2 id="sensor-board-pinout">Sensor Board Pinout<a class="headerlink" href="#sensor-board-pinout" title="Permanent link">¶</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">HIGH CURRENT</p>
+<p>The +15V and +5V outputs can deliver high currents. Ensure a proper connection before turning on the system.</p>
+</div>
 <p>The channel is linked to the sensor board adapters present on the system. To choose the channel, please follow the pinout as shown below.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/img/db37-signal-out-pinout.png" data-desc-position="bottom"><img alt="db37-signal-out-pinout" class="on-glb" src="../../../assets/img/db37-signal-out-pinout.png"></a></p>
 

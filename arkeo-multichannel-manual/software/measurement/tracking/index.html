@@ -5,6 +5,8 @@
       
       
       
+        <link rel="canonical" href="https://docs.cicciresearch.it/arkeo-multichannel-manual/software/measurement/tracking/">
+      
       
         <link rel="prev" href="../jv-scan/">
       
@@ -57,6 +59,8 @@
       <link rel="stylesheet" href="../../../assets/css/compact-tables.css">
     
       <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1326,7 +1330,7 @@
 <p>In the tracking phase of the measurement, the device is kept at a specific point (see <a href="../../settings/#tracking">the tracking settings</a> for all options). The first JV is used as the starting point of the tracking phase. For example, if the MPPT option is chosen, the tracking starts with the V_MPP of the JV. The steady-state MPP is often times lower than during a JV, especially with high hysteresis.</p>
 <h3 id="perturb-and-observe">Perturb and Observe<a class="headerlink" href="#perturb-and-observe" title="Permanent link">¶</a></h3>
 <p>The Perturb and Observe (PAO) algorithm is the most widely used algorithm for this task due its simplicity and robustness. Starting from an initial V_MPP obtained from the JV, the device is slightly positively and negatively perturbed (ΔV) with respect to V_MPP. This results in 3 points: V_MPP-ΔV, V_MPP, V_MPP+ΔV. For each point, the device power recorded, and the voltage associated with the maximum power is set as the new V_MPP. The algorithm is then repeated.</p>
-<details class="warning" open="open">
+<details class="warning">
 <summary>Current spikes</summary>
 <p>Jumps in voltage, especially when far from the MPP where the current changes more with changes in voltages, can cause problems in the measurement due to the capacitive effects of many photovoltaic devices. A JV scan stops either at Jsc (when measuring in reverse direction) or at Voc (when measuring in forward direction). A jump in voltage from this point to MPP causes a large current spike as the capacitive effect wears off. To avoid this issue, the Arkeo Multichannel, slowly moves from the last JV point of the scan to the MPP. With a speed (in V/s) according to the JV scan speed. </p>
 <p>Similarly, when oscillating the voltage during the PAO tracking the voltage is moving in a triangle pattern instead of a sawtooth pattern.</p>

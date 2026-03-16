@@ -5,6 +5,8 @@
       
       
       
+        <link rel="canonical" href="https://docs.cicciresearch.it/arkeo-multichannel-manual/software/sensors/data-file/">
+      
       
         <link rel="prev" href="../sensor/">
       
@@ -57,6 +59,8 @@
       <link rel="stylesheet" href="../../../assets/css/compact-tables.css">
     
       <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1405,7 +1409,7 @@
 <p>During operation the system continuously records the environmental parameters from the configured sensors. This data is stored independently from device measurement files so that environmental conditions remain available even when no device measurements are running.</p>
 <p>Sensor values are written periodically at a configurable interval (typically <strong>10 s</strong>) and stored in daily log files. This approach keeps file sizes manageable while allowing the system to operate continuously for long periods without interruption.</p>
 <h3 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">¶</a></h3>
-<p>Environmental data is stored in the <code>C:\Arkeo\Sensors\</code> folder using a hierarchical structure that separates different sensors. Files are organized by year and month to avoid excessively large directories.</p>
+<p>Environmental data is stored in the <code>D:\Arkeo\SensorLog\</code> folder using a hierarchical structure that separates different sensors. Files are organized by year and month to avoid excessively large directories and files.</p>
 <div class="highlight"><pre><span></span><code>Sensors/
   &lt;Sensor Name&gt;/
     2026/
@@ -1416,7 +1420,7 @@
 <p><strong>Note</strong> The parts above in &lt;&gt; brackets are replaced by the actual values of the sensors.</p>
 <p>Each file contains all measurements recorded during a single day. If the application is restarted during the same day, data logging automatically continues in the existing file.</p>
 <h3 id="file-format">File Format<a class="headerlink" href="#file-format" title="Permanent link">¶</a></h3>
-<p>Sensor data is stored as a tab-separated values table. The first rows contain some metadata about the sensor.</p>
+<p>Sensor data is stored as a tab-separated values table. The first rows contain some metadata about the sensor. The save interval can be changed in the configuration file by changing <code>Sensor.LogInterval</code> value. The unit is seconds.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code># sensor_type: Temperature
 # sensor_name: Outdoor Temperature
