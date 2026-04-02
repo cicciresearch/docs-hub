@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#settings" class="md-skip">
+        <a href="#chopper" class="md-skip">
           Skip to content
         </a>
       
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dark-jv/" class="md-nav__link">
+      <a href="../darkj-jv/dark-jv.md" class="md-nav__link">
         
   
   
@@ -937,6 +937,34 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chopper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chopper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chopper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chopped-light-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chopped light considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#settings" class="md-nav__link">
@@ -1415,6 +1443,99 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessories/air-unit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Air Unit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1958,6 +2079,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#chopper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chopper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chopper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chopped-light-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chopped light considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2169,6 +2318,15 @@
 <p>Every time the lamp is turned on, and after each 2 hours, it is recommended to calibrate the lamp power. See <a href="#lamp-calibration">Lamp Calibration</a>.</p>
 </div>
 <hr>
+<h2 id="chopper">Chopper<a class="headerlink" href="#chopper" title="Permanent link">¶</a></h2>
+<p>To improve the signal-to-noise ratio, a chopper can be introduced between the light source and the device. As the frequency of the chopped light is known, the noise can be filtered out by just considering the signal at this known frequency. In practice, a Fourier Transform is applied to extract this amplitude. This procedure is especially powerful when the input light intensity is very low (for example in the UV in case of a Xenon arc light) or when the signal from the device is very low (for example, when the wavelength exceeds the bandgap).</p>
+<h3 id="chopped-light-considerations">Chopped light considerations<a class="headerlink" href="#chopped-light-considerations" title="Permanent link">¶</a></h3>
+<p>Although using chopped light can improve the signal-to-noise ratio, it comes with some limtations that have to be considered.</p>
+<p><em>Acquisition Time</em>
+To properly calculate the Fourier Transform, it is recommended to provide at least 10 periods. The acquisition time at each wavelength must be selected according to the set frequency</p>
+<p><em>Device Response</em>
+Some devices, especially DSSCs, have very slow transient responses. Sometimes in the order of seconds. If the frequency of the chopped light is faster than the transient response of the device, the current isn't allowed to saturate and the EQE can be underestimated. </p>
+<hr>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <p>The following settings are available for the IPCE routine</p>
 <h3 id="manual-monochromator-control">Manual Monochromator Control<a class="headerlink" href="#manual-monochromator-control" title="Permanent link">¶</a></h3>
@@ -2296,6 +2454,11 @@
 <hr>
 <h2 id="lamp-calibration">Lamp Calibration<a class="headerlink" href="#lamp-calibration" title="Permanent link">¶</a></h2>
 <p>Every time the lamp is turned on, and after each 2 hours, it is recommended to calibrate the lamp power. To calibrate the lamp, check the "Calibrate" checkbox and start the measurement as normal. You are then asked to provide the photodiode calibration file. A default file is selected automatically. </p>
+<p>The system will then sweep through the selected wavelengths and record the current from the photodiode. The lamp power is then calculated as 
+$$
+P_{lamp}(W/cm²) = I_{ph}(A/cm²) / \text{responsivity} (A/W)
+$$
+After the calibration, the result is saved to a file at <code>C:\Arkeo\calibration\IPCE Lamp Power.txt</code>. A copy is also created <code>C:\Arkeo\calibration\IPCE Calibration History</code>. All measurements use the latest calibration file to calculated the EQE.</p>
 <h2 id="data-display">Data Display<a class="headerlink" href="#data-display" title="Permanent link">¶</a></h2>
 <p>During the measurement, the interface provides:</p>
 <ul>

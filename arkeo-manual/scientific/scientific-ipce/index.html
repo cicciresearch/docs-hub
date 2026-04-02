@@ -821,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/routines/dark-jv/" class="md-nav__link">
+      <a href="../../software/routines/darkj-jv/dark-jv.md" class="md-nav__link">
         
   
   
@@ -1302,6 +1302,96 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/accessories/air-unit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Air Unit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../software/parameter-sweep/" class="md-nav__link">
         
@@ -1707,10 +1797,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bias-light-and-lock-in-detection" class="md-nav__link">
+  <a href="#spectral-deviation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bias light and lock-in detection
+        Spectral deviation
       
     </span>
   </a>
@@ -1718,10 +1808,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#spectral-deviation" class="md-nav__link">
+  <a href="#bias-light-and-lock-in-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Spectral deviation
+        Bias light and lock-in detection
       
     </span>
   </a>
@@ -1972,10 +2062,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bias-light-and-lock-in-detection" class="md-nav__link">
+  <a href="#spectral-deviation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bias light and lock-in detection
+        Spectral deviation
       
     </span>
   </a>
@@ -1983,10 +2073,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#spectral-deviation" class="md-nav__link">
+  <a href="#bias-light-and-lock-in-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Spectral deviation
+        Bias light and lock-in detection
       
     </span>
   </a>
@@ -2156,6 +2246,13 @@ q \int_{\lambda_{min}}^{\lambda_{max}}
 \eta_{IPCE} \phi_{ph}^{source}(\lambda) d\lambda
 $$
 In practice, <span class="arithmatex">\(J_{sc}\)</span> from EQE and from JV scans may differ due to light-intensity dependence or nonlinear photo-current behaviour.</p>
+<h3 id="spectral-deviation">Spectral deviation<a class="headerlink" href="#spectral-deviation" title="Permanent link">¶</a></h3>
+<p>If a perfect spectral match is not possible, the <strong>Spectral Deviation (SD)</strong> is calculated as:
+$$
+SD = \frac
+{\int EQE(\lambda) \cdot \lambda \cdot E_{SIM}(\lambda) d\lambda}
+{\int EQE(\lambda) \cdot \lambda \cdot E_{REF}(\lambda) d\lambda}
+$$</p>
 <hr>
 <h3 id="bias-light-and-lock-in-detection">Bias light and lock-in detection<a class="headerlink" href="#bias-light-and-lock-in-detection" title="Permanent link">¶</a></h3>
 <p>When using bias light:</p>
@@ -2171,16 +2268,6 @@ In practice, <span class="arithmatex">\(J_{sc}\)</span> from EQE and from JV sca
 <li>Extracting the periodic monochromatic signal from steady bias current</li>
 </ul>
 <p>For slow devices (e.g. DSSCs), chopping frequency must exceed current settling time.</p>
-<h2 id="spectral-deviation">Spectral deviation<a class="headerlink" href="#spectral-deviation" title="Permanent link">¶</a></h2>
-<p>If a perfect spectral match is not possible, the <strong>Spectral Deviation (SD)</strong> is calculated as:</p>
-<div class="arithmatex">\[
-SD =
-\frac{
-\int EQE(\lambda)\lambda E_{SIM}(\lambda) d\lambda
-}{
-\int EQE(\lambda)\lambda E_{REF}(\lambda) d\lambda
-}
-\]</div>
 <hr>
 <h2 id="ipce-measurements-on-tandem-solar-cells">IPCE measurements on tandem solar cells<a class="headerlink" href="#ipce-measurements-on-tandem-solar-cells" title="Permanent link">¶</a></h2>
 <p>Tandem devices combine multiple absorbers (e.g., silicon + perovskite).</p>

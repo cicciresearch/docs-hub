@@ -907,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routines/dark-jv/" class="md-nav__link">
+      <a href="../routines/darkj-jv/dark-jv.md" class="md-nav__link">
         
   
   
@@ -1369,6 +1369,99 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessories/air-unit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Air Unit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2026,18 +2119,15 @@ This hierarchical structure ensures that:<p></p>
 <hr>
 <h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">¶</a></h2>
 <p>To make data processing easier, all files have the same general structure, independent of the measurement type. Each file starts with a header section, indicated by the <code>## Header ##</code> tag, containing all measurement settings. Settings are further subdivided in categories by labels in square brackets. Every file contains the <code>[General info]</code> category containing basic information (see <a href="#example-file">Example File</a>). Other categories depend on the performed routine.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As the software evolves, settings may be added, modified or deleted. When this happens ensure that any post-processing script can handle this.</p>
-</div>
 <p>Some routines may include a <code>## Parameter ##</code> section. For example, the JV routine has this section to include the JV parameters.<br>
 <strong>Note</strong>: If a routine doesn't require any parameters to be saved, this section is omitted.</p>
 <p>The <code>## Data ##</code> tag indicates where the actual measurement result begins. Data is always stored in a tab-delimited 2D array of values, always containing a row with column headers describing each data column. This format ensures compatibility with common data processing tools such as MATLAB, Python, Origin, and spreadsheet software.</p>
+<div class="admonition warning">
+<p class="admonition-title">Post-processing</p>
+<p>As the software evolves, settings may be added, modified or deleted. When this happens ensure that any post-processing script can handle this. e.g. do no remove a fixed number of lines to read the data, but dynamically search for the <code>## Data ##</code> tag.</p>
+</div>
 <hr>
-<p>By enforcing a consistent file architecture across all routines, the
-ARKEO system enables streamlined automated analysis, robust data
-archiving, and straightforward integration into external data processing
-pipelines.</p>
+<p>By enforcing a consistent file architecture across all routines, the ARKEO system enables streamlined automated analysis, robust data archiving, and straightforward integration into external data processing pipelines.</p>
 <hr>
 <h2 id="example-file">Example File<a class="headerlink" href="#example-file" title="Permanent link">¶</a></h2>
 <p>Below you can find an example file of a Dark JV measurement</p>
