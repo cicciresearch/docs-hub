@@ -1,0 +1,116 @@
+:root{
+    --primary:#f19c1d;
+
+    /* Category colors */
+    --air:#3f51b5;
+    --chamber:#2e7d32;
+    --light:#ef6c00;
+}
+
+.md-typeset h1{
+    color:var(--primary);
+}
+
+.device-gallery .md-typeset img {
+    max-height: 400px;   /* choose your height */
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* product overview */
+
+/* GRID */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+    margin-top:30px;
+}
+
+/* CARD */
+.product-card{
+    position:relative;
+    background:white;
+    border-radius:12px;
+    padding:22px;
+    text-align:center;
+    transition:all 0.25s ease;
+    border:1px solid #e5e8f3;
+    overflow:hidden;
+}
+
+/* SOFT TOP ACCENT (category color) */
+.product-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:var(--primary);
+    transition:0.25s;
+}
+
+/* CATEGORY COLORS */
+.product-card.light::before{ background:var(--light); }
+.product-card.chamber::before{ background:var(--chamber); }
+.product-card.air::before{ background:var(--air); }
+
+/* HOVER EFFECT */
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+.product-card img{
+    width:110px;
+    height:85px;
+    object-fit:contain;
+    margin-bottom:12px;
+    transition:0.25s;
+}
+
+/* IMAGE ZOOM ON HOVER */
+.product-card:hover img{
+    transform:scale(1.08);
+}
+
+/* TITLE */
+.product-card h3{
+    margin:10px 0 8px 0;
+}
+
+/* DESCRIPTION */
+.product-card p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:14px;
+}
+
+/* BUTTON */
+.product-card .md-button{
+    transition:0.2s;
+}
+
+/* BUTTON COLOR PER CATEGORY */
+.product-card.light .md-button{
+    background:var(--light);
+    color:white;
+}
+
+.product-card.chamber .md-button{
+    background:var(--chamber);
+    color:white;
+}
+
+.product-card.air .md-button{
+    background:var(--air);
+    color:white;
+}
+
+/* BUTTON HOVER */
+.product-card .md-button:hover{
+    opacity:0.9;
+}
