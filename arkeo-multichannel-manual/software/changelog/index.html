@@ -20,7 +20,7 @@
     
     
       
-        <title>Changelog - Arkeo Multichannel Manual (v2.4.0)</title>
+        <title>Changelog - Arkeo Multichannel Manual (v2.5.0)</title>
       
     
     
@@ -111,7 +111,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Arkeo Multichannel Manual (v2.4.0)" class="md-header__button md-logo" aria-label="Arkeo Multichannel Manual (v2.4.0)" data-md-component="logo">
+    <a href="../.." title="Arkeo Multichannel Manual (v2.5.0)" class="md-header__button md-logo" aria-label="Arkeo Multichannel Manual (v2.5.0)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -125,7 +125,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Arkeo Multichannel Manual (v2.4.0)
+            Arkeo Multichannel Manual (v2.5.0)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -237,13 +237,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Arkeo Multichannel Manual (v2.4.0)" class="md-nav__button md-logo" aria-label="Arkeo Multichannel Manual (v2.4.0)" data-md-component="logo">
+    <a href="../.." title="Arkeo Multichannel Manual (v2.5.0)" class="md-nav__button md-logo" aria-label="Arkeo Multichannel Manual (v2.5.0)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
-    Arkeo Multichannel Manual (v2.4.0)
+    Arkeo Multichannel Manual (v2.5.0)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1417,6 +1417,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#v250-2026-04-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.5.0 - 2026-04-14
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1614,6 +1625,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#v250-2026-04-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.5.0 - 2026-04-14
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1745,13 +1767,26 @@
 </ul>
 <h4 id="v240-2026-03-09">v2.4.0 - 2026-03-09<a class="headerlink" href="#v240-2026-03-09" title="Permanent link">¶</a></h4>
 <ul>
-<li>Changed file headers to now contain all settings (see <a href="../data/jv-file/">JV File</a>).<ul>
+<li>Changed file headers to now contain all settings (see <a href="../data/jv-file/">JV File</a> for more details).<ul>
 <li>Most notable, the environment and day-night cycling settings are now included (if enabled)</li>
 <li>Legacy version is still available by setting <code>FileHeaderVersion = 1</code> in the config file</li>
 </ul>
 </li>
-<li>Added generic temperature and humidity sensors. Any sensor with a gain and offset can be used now.</li>
+<li>Added generic sensors option when adding a custom sensor. Any sensor with a gain and offset can be used now</li>
 <li>Added <a href="../sensors/data-file/">sensor data files</a>. Sensor data is saved here, independently of any configured devices</li>
+</ul>
+<h4 id="v250-2026-04-14">v2.5.0 - 2026-04-14<a class="headerlink" href="#v250-2026-04-14" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added JV preview on parameter point hover in the tracking and curve parameters view</li>
+<li>Added a JV history view, showing JV curves overlapped</li>
+<li>Fixed tracking in <code>Fixed Voltage</code> mode not moving beyond JV scan range limits</li>
+<li>Improved MPPT speed</li>
+<li>Removed the <code>Perturbation</code> setting<ul>
+<li><code>MPPT</code> now automatically uses 5% of the JV scan range</li>
+<li>Other modes now use a proportional algorithm instead of a perturb and observe algorithm to apply the setpoint (<a href="../measurement/tracking/#fixed-setpoint">details</a>)</li>
+</ul>
+</li>
+<li>Removed <code>Fixed Voltage (no track)</code></li>
 </ul>
 
 

@@ -22,7 +22,7 @@
     
     
       
-        <title>Tracking - Arkeo Multichannel Manual (v2.4.0)</title>
+        <title>Tracking - Arkeo Multichannel Manual (v2.5.0)</title>
       
     
     
@@ -113,7 +113,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Arkeo Multichannel Manual (v2.4.0)" class="md-header__button md-logo" aria-label="Arkeo Multichannel Manual (v2.4.0)" data-md-component="logo">
+    <a href="../../.." title="Arkeo Multichannel Manual (v2.5.0)" class="md-header__button md-logo" aria-label="Arkeo Multichannel Manual (v2.5.0)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -127,7 +127,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Arkeo Multichannel Manual (v2.4.0)
+            Arkeo Multichannel Manual (v2.5.0)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -239,13 +239,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Arkeo Multichannel Manual (v2.4.0)" class="md-nav__button md-logo" aria-label="Arkeo Multichannel Manual (v2.4.0)" data-md-component="logo">
+    <a href="../../.." title="Arkeo Multichannel Manual (v2.5.0)" class="md-nav__button md-logo" aria-label="Arkeo Multichannel Manual (v2.5.0)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
-    Arkeo Multichannel Manual (v2.4.0)
+    Arkeo Multichannel Manual (v2.5.0)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -824,6 +824,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fixed-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed setpoint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixed setpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Voltage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1308,6 +1347,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fixed-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed setpoint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixed setpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Voltage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1327,19 +1405,31 @@
 
   <h1>Tracking</h1>
 
-<p>In the tracking phase of the measurement, the device is kept at a specific point (see <a href="../../settings/#tracking">the tracking settings</a> for all options). The first JV is used as the starting point of the tracking phase. For example, if the MPPT option is chosen, the tracking starts with the V_MPP of the JV. The steady-state MPP is often times lower than during a JV, especially with high hysteresis.</p>
-<h3 id="perturb-and-observe">Perturb and Observe<a class="headerlink" href="#perturb-and-observe" title="Permanent link">¶</a></h3>
-<p>The Perturb and Observe (PAO) algorithm is the most widely used algorithm for this task due its simplicity and robustness. Starting from an initial V_MPP obtained from the JV, the device is slightly positively and negatively perturbed (ΔV) with respect to V_MPP. This results in 3 points: V_MPP-ΔV, V_MPP, V_MPP+ΔV. For each point, the device power recorded, and the voltage associated with the maximum power is set as the new V_MPP. The algorithm is then repeated.</p>
+<p>In the tracking phase of the measurement, the device is kept at a specific point (see <a href="../../settings/#tracking">the tracking settings</a> for all options). The first JV curve is used as a rough starting point for the tracking phase. For example, if the <abbr title="Maximum Power Point Tracking">MPPT</abbr> option is chosen, the tracking starts with the voltage of the <abbr title="Maximum Power Point">MPP</abbr> of the JV. The steady-state <abbr title="Maximum Power Point">MPP</abbr> is often times lower than during a JV, especially with high hysteresis.</p>
+<h2 id="perturb-and-observe">Perturb and Observe<a class="headerlink" href="#perturb-and-observe" title="Permanent link">¶</a></h2>
+<p>The <abbr title="Maximum Power Point">MPP</abbr> of a device is unknown and can change over time. Therefor, a standard control algorithm cannot be used due to the unknown setpoint. Instead, the Perturb and Observe (PAO) algorithm is used. Starting from an initial voltage obtained from the JV, the device is slightly positively and negatively perturbed (ΔV) with respect to active working point. This results in 3 points: V_MPP-ΔV, V_MPP, V_MPP+ΔV. For each point, the device power is recorded, and the voltage associated with the maximum power is set as the new V_MPP. The algorithm is then repeated.</p>
 <details class="warning">
 <summary>Current spikes</summary>
-<p>Jumps in voltage, especially when far from the MPP where the current changes more with changes in voltages, can cause problems in the measurement due to the capacitive effects of many photovoltaic devices. A JV scan stops either at Jsc (when measuring in reverse direction) or at Voc (when measuring in forward direction). A jump in voltage from this point to MPP causes a large current spike as the capacitive effect wears off. To avoid this issue, the Arkeo Multichannel, slowly moves from the last JV point of the scan to the MPP. With a speed (in V/s) according to the JV scan speed. </p>
+<p>Jumps in voltage, especially when far from the <abbr title="Maximum Power Point">MPP</abbr> where the current changes more with changes in voltages, can cause problems in the measurement due to the capacitive effects of many photovoltaic devices. A JV scan stops either at <abbr title="Short-circuit Current">Jsc</abbr> (when measuring in reverse direction) or at <abbr title="Open-circuit Voltage">Voc</abbr> (when measuring in forward direction). A jump in voltage from this point to <abbr title="Maximum Power Point">MPP</abbr> causes a large current spike as the capacitive effect wears off. To avoid this issue, the Arkeo Multichannel, slowly moves from the last JV point of the scan to the <abbr title="Maximum Power Point">MPP</abbr>. With a speed (in V/s) according to the JV scan speed. </p>
 <p>Similarly, when oscillating the voltage during the PAO tracking the voltage is moving in a triangle pattern instead of a sawtooth pattern.</p>
 <p></p><figure markdown="span">
 <img alt="pao" src="../../../assets/img/pao-shape.png">
 <figcaption>The PAO used in the Arkeo Multichannel software avoids sharp jumps in voltage (left). Instead, smoother transitions are always used (right).</figcaption>
 </figure><p></p>
 </details>
-<p>The disadvantage of the PAO algorithm is the slow response if the MPP has large variation relative to the ΔV, for example when suddenly changing the intensity of the illuminating light source. Moreover, the ΔV must be chosen beforehand by the user, and an optimal value differs per device. Devices with higher VOC require a higher ΔV (choosing a ΔV that is too low compared to the V_MPP can result in the algorithm tracking the noise level of the voltage measurement instead). </p>
+<p>The disadvantage of the PAO algorithm is the slow response if the <abbr title="Maximum Power Point">MPP</abbr> has large variation relative to the ΔV, for example when suddenly changing the intensity of the illuminating light source. Moreover, the ΔV must be chosen beforehand by the user, and an optimal value differs per device. Devices with higher VOC require a higher ΔV (choosing a ΔV that is too low compared to the V_MPP can result in the algorithm tracking the noise level of the voltage measurement instead). </p>
+<h2 id="fixed-setpoint">Fixed setpoint<a class="headerlink" href="#fixed-setpoint" title="Permanent link">¶</a></h2>
+<p>All other modes have a known setpoint, either in voltage or in current. For these modes, a proportional model is used to maintain the setpoint.</p>
+<h3 id="fixed-voltage">Fixed Voltage<a class="headerlink" href="#fixed-voltage" title="Permanent link">¶</a></h3>
+<p>A standard <abbr title="Source Meter Unit">SMU</abbr> is not a true potentiostat as it lacks a hardware feedback loop to correct for any voltage drop due to a current flow. Instead this compensation is done in software. By comparing the applied voltage to the actual measured voltage, the difference can be added to the next iteration:
+$$
+V_{set}(n) = V_{set}(n-1) +  ( V_{setpoint} - V_{measured} )
+$$</p>
+<h3 id="fixed-current">Fixed Current<a class="headerlink" href="#fixed-current" title="Permanent link">¶</a></h3>
+<p>Applying a fixed current is not as trivial as a fixed voltage due to the lack of a hardware galvanostatic mode. The same algorithm is used as in the <code>Fixed Voltage</code> mode. In addition, the derivative of the JV curve is used to translate the proportional error in current to the compensation in voltage.
+$$
+V_{set}(n) = V_{set}(n-1) + \frac{(I_{setpoint} - I_{measured})}{(dI/dV)}
+$$</p>
 
 
 
