@@ -1,0 +1,35 @@
+.md-typeset table.settings-table {
+  table-layout fixed;
+  width 100%;
+}
+
+.md-typeset table.settings-table th,
+.md-typeset table.settings-table td {
+  vertical-align top;
+}
+
+ Optional tweak column widths 
+.md-typeset table.settings-table thnth-child(1),
+.md-typeset table.settings-table tdnth-child(1) {
+  width 18%;
+}
+
+.md-typeset table.settings-table thnth-child(2),
+.md-typeset table.settings-table tdnth-child(2) {
+  width 42%;
+}
+
+.md-typeset table.settings-table thnth-child(3),
+.md-typeset table.settings-table tdnth-child(3) {
+  width 15%;
+}
+
+.md-typeset table.settings-table thnth-child(4),
+.md-typeset table.settings-table tdnth-child(4) {
+  width 10%;
+}
+
+.md-typeset table.settings-table thnth-child(5),
+.md-typeset table.settings-table tdnth-child(5) {
+  width 15%;
+}
