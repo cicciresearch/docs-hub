@@ -1349,42 +1349,28 @@
 
   <h1>JV</h1>
 
-<p>Every measurement start with a JV scan to obtain the device's key parameters such as Voc<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, Jsc<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and MPP<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. If tracking is enabled, a JV scan is repeated a fixed intervals to obtain these parameters over time.</p>
+<p>Every measurement start with a JV scan to obtain the device's key parameters such as <abbr title="Open-circuit Voltage">Voc</abbr>, <abbr title="Short-circuit Current">Jsc</abbr> and <abbr title="Maximum Power Point">MPP</abbr>. If tracking is enabled, a JV scan is repeated a fixed intervals to obtain these parameters over time.</p>
 <p><img alt="jv-scan" src="../../../assets/img/jv-scan.png">
 A staircase voltage ramp is applied from the start to the end voltage. The time each point is applied is determined by step size / scan rate. </p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">¶</a></h3>
 <p>After a JV scan is completed, the following parameters are extracted. All parameters are saved in each <a href="../../data/jv-file/">JV file</a>.</p>
 <ul>
-<li><strong>Voc</strong><sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>: The voltage at which current is 0 A.</li>
-<li><strong>Jsc</strong><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>: The current at which voltage is 0 V.</li>
-<li><strong>V_MPP</strong>: The voltage at the MPP<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
-<li><strong>J_MPP</strong>: The current at the MPP<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
-<li><strong>P_MPP</strong>: The power at the MPP (V_MPP * J_MPP)</li>
-<li><strong>Fill Factor</strong>: P_MPP / (Voc * Jsc)</li>
+<li><strong><abbr title="Open-circuit Voltage">Voc</abbr></strong>: The voltage at which current is 0 A.</li>
+<li><strong><abbr title="Short-circuit Current">Jsc</abbr></strong>: The current at which voltage is 0 V.</li>
+<li><strong>V_MPP</strong>: The voltage at the <abbr title="Maximum Power Point">MPP</abbr></li>
+<li><strong>J_MPP</strong>: The current at the <abbr title="Maximum Power Point">MPP</abbr></li>
+<li><strong>P_MPP</strong>: The power at the <abbr title="Maximum Power Point">MPP</abbr> (V_MPP * J_MPP)</li>
+<li><strong>Fill Factor</strong>: P_MPP / (<abbr title="Open-circuit Voltage">Voc</abbr> * <abbr title="Short-circuit Current">Jsc</abbr>)</li>
 <li><strong>Efficiency</strong>: P_MPP / I_Incident</li>
-<li><strong>R_series</strong>: 1/slope at Voc</li>
-<li><strong>R_shunt</strong>: 1/slope at Jsc</li>
+<li><strong>R_series</strong>: 1/slope at <abbr title="Open-circuit Voltage">Voc</abbr></li>
+<li><strong>R_shunt</strong>: 1/slope at <abbr title="Short-circuit Current">Jsc</abbr></li>
 </ul>
 <details class="info" open="open">
 <summary>R calculation</summary>
-<p>The resistance calculation at Voc and Jsc are done with 10% of the JV range. e.g. if the JV is done from -0.2 V to 1.2 V, the taken range is (1.2 - -0.2) * 0.1 = 0.14 V.</p>
+<p>The resistance calculation at <abbr title="Open-circuit Voltage">Voc</abbr> and <abbr title="Short-circuit Current">Jsc</abbr> are done with 10% of the JV range. e.g. if the JV is done from -0.2 V to 1.2 V, the taken range is (1.2 - -0.2) * 0.1 = 0.14 V.</p>
 </details>
 <h3 id="jv-parameters-reference">JV Parameters Reference<a class="headerlink" href="#jv-parameters-reference" title="Permanent link">¶</a></h3>
 <p><img alt="jv-parameters" src="../../../assets/img/jv-parameters.png"></p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Open-circuit Voltage&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:2">
-<p>Short-circuit Current&nbsp;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:3">
-<p>Maximum Power Point&nbsp;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-</ol>
-</div>
 
 
 

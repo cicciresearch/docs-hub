@@ -965,6 +965,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="File structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Header ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Parameters ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Data ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1306,6 +1345,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="File structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Header ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Parameters ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ## Data ##
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1337,13 +1415,18 @@
 <li><a href="parameter-file/">Parameter</a></li>
 <li><a href="tracking-file/">Tracking</a></li>
 </ol>
-<h3 id="file-structure">File structure<a class="headerlink" href="#file-structure" title="Permanent link">¶</a></h3>
-<p>To make data processing easier, all files have the same general structure, independent of the measurement type. Each file starts with a header section, indicated by the <code>## Header ##</code> tag, containing all measurement settings. Settings are further subdivided in categories by labels in square brackets. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h2 id="file-structure">File structure<a class="headerlink" href="#file-structure" title="Permanent link">¶</a></h2>
+<p>To make data processing easier, all files have the same general structure, independent of the measurement type. </p>
+<h3 id="header"><code>## Header ##</code><a class="headerlink" href="#header" title="Permanent link">¶</a></h3>
+<p>Each file starts with a header section, indicated by the <code>## Header ##</code> tag, containing all measurement settings. Settings are further subdivided in categories by labels in square brackets. </p>
+<div class="admonition info">
+<p class="admonition-title">File structure</p>
 <p>As the software evolves, settings may be added, modified or deleted. When this happens ensure that any post-processing script can handle this.</p>
 </div>
-<p>The <code>## Data ##</code> tag indicates where the actual measurement result begins. Data is always stored in a tab-delimited 2D array of values, always containing a row with column headers. In the case of the JV file, a table with the JV parameters and a table with each raw data point of the JV scan is also stored.</p>
+<h3 id="parameters"><code>## Parameters ##</code><a class="headerlink" href="#parameters" title="Permanent link">¶</a></h3>
+<p>The <a href="jv-file/">JV file</a> contains a <code>## Parameters ##</code> section where the calculated JV parameters are stored</p>
+<h3 id="data"><code>## Data ##</code><a class="headerlink" href="#data" title="Permanent link">¶</a></h3>
+<p>The <code>## Data ##</code> tag indicates where the actual measurement result begins. Data is always stored in a tab-delimited 2D array of values, always containing a row with column headers</p>
 <div class="highlight"><pre><span></span><code>## Header ##
 [General info]
 User    Cicci Research
