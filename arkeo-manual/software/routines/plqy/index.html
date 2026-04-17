@@ -94,6 +94,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-emitted-photons-pl-region" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1051,6 +1056,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PLQY
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1067,6 +1090,45 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-emitted-photons-pl-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Emitted photons (PL region)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-absorbed-photons-pump-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Absorbed photons (pump region)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1921,6 +1983,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-emitted-photons-pl-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Emitted photons (PL region)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-absorbed-photons-pump-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Absorbed photons (pump region)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2049,6 +2141,56 @@
   <h1>PLQY</h1>
 
 <p><img alt="PLQY Interface" src="../img/plqy.png"></p>
+<p>Compare how many photons are <strong>absorbed from the pump</strong> vs how many photons are <strong>reemitted as PL</strong>.</p>
+<p>Spectra are in <strong>W/m² (power density)</strong>, but <strong>PLQY is a photon ratio</strong>, so you must convert <strong>power → photon flux</strong>.
+$$
+\Phi(\lambda) = \frac{I(\lambda)}{hc/\lambda} = \frac{I(\lambda) \cdot \lambda}{hc}
+$$</p>
+<div class="arithmatex">\[
+\boxed{
+\text{PLQY} = \frac{N_\text{emitted}}{N_\text{absorbed}}
+} = 
+\boxed{
+\text{PLQY} =
+\frac{
+\sum_{\text{PL}} \left( I_\text{sample} - I_\text{pump} \right) \lambda \Delta\lambda
+}{
+\sum_{\text{pump}} \left( I_\text{pump} - I_\text{sample} \right) \lambda \Delta\lambda
+}
+}
+\]</div>
+<figure>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="schemetic.png" data-desc-position="bottom"><img alt="plqy schematic" class="on-glb" src="schemetic.png" width="100%"></a>
+</figure>
+<hr>
+<p>Let:</p>
+<ul>
+<li><span class="arithmatex">\(I_\text{pump}(\lambda)\)</span> = pump-only spectrum</li>
+<li><span class="arithmatex">\(I_\text{sample}(\lambda)\)</span> = pump + PL (with reduced pump)</li>
+</ul>
+<p>Then:
+$$
+\text{PLQY} =
+\frac{
+\int \frac{I_\text{sample}(\lambda) - I_\text{pump}(\lambda)}{hc/\lambda} \cdot d\lambda
+}{
+\int \frac{I_\text{pump}(\lambda) - I_\text{sample}(\lambda)}{hc/\lambda} \cdot d\lambda
+}
+$$</p>
+<p>Split into <strong>two wavelength regions</strong>:</p>
+<h3 id="1-emitted-photons-pl-region">1. Emitted photons (PL region)<a class="headerlink" href="#1-emitted-photons-pl-region" title="Permanent link">¶</a></h3>
+<p>(typically longer wavelengths than pump)</p>
+<div class="arithmatex">\[
+N_\text{emitted} =
+\int_{\text{PL region}} \frac{I_\text{sample}(\lambda) - I_\text{pump}(\lambda)}{hc/\lambda} d\lambda
+\]</div>
+<hr>
+<h3 id="2-absorbed-photons-pump-region">2. Absorbed photons (pump region)<a class="headerlink" href="#2-absorbed-photons-pump-region" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+N_\text{absorbed} =
+\int_{\text{pump region}} \frac{I_\text{pump}(\lambda) - I_\text{sample}(\lambda)}{hc/\lambda} d\lambda
+\]</div>
+<p>This measures how much pump light disappeared (absorbed).</p>
 
 
 
