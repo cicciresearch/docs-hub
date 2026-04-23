@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-emitted-photons-pl-region" class="md-skip">
+        <a href="#2-step-measurement" class="md-skip">
           Skip to content
         </a>
       
@@ -1105,10 +1105,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-emitted-photons-pl-region" class="md-nav__link">
+  <a href="#2-step-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Emitted photons (PL region)
+        2 step measurement
       
     </span>
   </a>
@@ -1116,10 +1116,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-absorbed-photons-pump-region" class="md-nav__link">
+  <a href="#3-step-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Absorbed photons (pump region)
+        3 step measurement
       
     </span>
   </a>
@@ -1929,6 +1929,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../scientific/scientific-tpr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transient Photo Response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scientific/scientific-eis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Impedance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../scientific/scientific-celiv/" class="md-nav__link">
         
   
@@ -1990,10 +2046,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-emitted-photons-pl-region" class="md-nav__link">
+  <a href="#2-step-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Emitted photons (PL region)
+        2 step measurement
       
     </span>
   </a>
@@ -2001,10 +2057,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-absorbed-photons-pump-region" class="md-nav__link">
+  <a href="#3-step-measurement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Absorbed photons (pump region)
+        3 step measurement
       
     </span>
   </a>
@@ -2146,7 +2202,12 @@
 $$
 \Phi(\lambda) = \frac{I(\lambda)}{hc/\lambda} = \frac{I(\lambda) \cdot \lambda}{hc}
 $$</p>
-<div class="arithmatex">\[
+<h2 id="2-step-measurement">2 step measurement<a class="headerlink" href="#2-step-measurement" title="Permanent link">¶</a></h2>
+<p>The simplest PLQY measurements involves 2 steps. </p>
+<p>The first step is to measure the spectrum of the excitation light, without any device. If the same source and setup is used every time, this step can be stored in an external and the measurement can be skipped for subsequent measurement.</p>
+<p>The next step is the place the device in the light beam and obtain a new spectrum. It should be observed that the pump signel is reduces due the device absorbing it. It re-emits the absorbed at a longer wavelength as a PL signal.</p>
+<p>The PLQY is then obtained as the ratio between the difference of the two signals:
+$$
 \boxed{
 \text{PLQY} = \frac{N_\text{emitted}}{N_\text{absorbed}}
 } = 
@@ -2158,39 +2219,54 @@ $$</p>
 \sum_{\text{pump}} \left( I_\text{pump} - I_\text{sample} \right) \lambda \Delta\lambda
 }
 }
-\]</div>
+$$</p>
 <figure>
   <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="schemetic.png" data-desc-position="bottom"><img alt="plqy schematic" class="on-glb" src="schemetic.png" width="100%"></a>
 </figure>
-<hr>
-<p>Let:</p>
+<p>In practice, the obtained spectra (pump and sample) must be split into 2 regions:</p>
 <ul>
 <li><span class="arithmatex">\(I_\text{pump}(\lambda)\)</span> = pump-only spectrum</li>
 <li><span class="arithmatex">\(I_\text{sample}(\lambda)\)</span> = pump + PL (with reduced pump)</li>
 </ul>
-<p>Then:
+<p><strong>Absorbed photons</strong></p>
+<p>This measures how much pump light disappeared (absorbed).
 $$
-\text{PLQY} =
-\frac{
-\int \frac{I_\text{sample}(\lambda) - I_\text{pump}(\lambda)}{hc/\lambda} \cdot d\lambda
-}{
-\int \frac{I_\text{pump}(\lambda) - I_\text{sample}(\lambda)}{hc/\lambda} \cdot d\lambda
-}
-$$</p>
-<p>Split into <strong>two wavelength regions</strong>:</p>
-<h3 id="1-emitted-photons-pl-region">1. Emitted photons (PL region)<a class="headerlink" href="#1-emitted-photons-pl-region" title="Permanent link">¶</a></h3>
-<p>(typically longer wavelengths than pump)</p>
-<div class="arithmatex">\[
-N_\text{emitted} =
-\int_{\text{PL region}} \frac{I_\text{sample}(\lambda) - I_\text{pump}(\lambda)}{hc/\lambda} d\lambda
-\]</div>
-<hr>
-<h3 id="2-absorbed-photons-pump-region">2. Absorbed photons (pump region)<a class="headerlink" href="#2-absorbed-photons-pump-region" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[
 N_\text{absorbed} =
 \int_{\text{pump region}} \frac{I_\text{pump}(\lambda) - I_\text{sample}(\lambda)}{hc/\lambda} d\lambda
-\]</div>
-<p>This measures how much pump light disappeared (absorbed).</p>
+$$</p>
+<p><strong>Emitted photons (PL region)</strong></p>
+<p>(typically longer wavelengths than pump)
+$$
+N_\text{emitted} =
+\int_{\text{PL region}} \frac{I_\text{sample}(\lambda) - I_\text{pump}(\lambda)}{hc/\lambda} d\lambda
+$$</p>
+<hr>
+<h2 id="3-step-measurement">3 step measurement<a class="headerlink" href="#3-step-measurement" title="Permanent link">¶</a></h2>
+<p>The above measurement assumes all emission happens in the first pass of the laser on the device. In reality, the diffuse scattering of the laser inside the integrating sphere causes additional emission. The three-step method extends the measurement framework to explicitly account for all photon pathways, including those neglected in the 2MM. It introduces a third configuration that allows separation of direct excitation, indirect excitation, and multiple-scattering contributions.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="2MM%20vs%203MM.png" data-desc-position="bottom"><img alt="plqy 3mm" class="on-glb" src="2MM%20vs%203MM.png" width="100%"></a>
+</figure>
+<p>Three distinct measurements are performed. The first is identical to the 2MM baseline, i.e. the empty sphere, providing the reference excitation intensity. The second measurement places the sample inside the sphere but outside the direct beam, so that excitation occurs only through diffuse scattered photons. The third measurement places the sample directly in the beam path, combining direct and indirect excitation.</p>
+<div class="admonition warning">
+<p class="admonition-title">incident photon fraction</p>
+<p>Unlike the 2MM, this method explicitly tracks the multiple-interaction history of photons, removing the approximation that absorption occurs only at first contact. As a consequence, it introduces the need to define the parameter f, representing the fraction of photons directly incident on the sample. This parameter becomes central in separating direct and diffuse contributions.</p>
+</div>
+<p>The resulting expressions for PLQY involve both emission signals (from indirect and direct configurations) and excitation signals, as well as the <strong>absorption coefficient (A)</strong> derived from the excitation measurements:
+$$
+\eta = \frac{P_c - [f(1-A) + (1-f)] P_b}{f A L_a}
+$$
+with A:
+$$
+A = 1 - \frac{L_c-(1-f)L_b}{fL_b}
+$$</p>
+<p>In the ideal case where <strong>all photons hit the sample directly (<span class="arithmatex">\(f\)</span> = 1)</strong>, the expression simplifies considerably:
+$$
+\eta = \frac{P_c - (1-A)P_b}{A L_a}
+$$
+with absorption obtained from the ratio of excitation signals:
+$$
+A = 1 - \frac{L_c}{L_b}
+$$</p>
 
 
 
