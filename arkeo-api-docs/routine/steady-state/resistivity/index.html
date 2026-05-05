@@ -18,7 +18,7 @@
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/img/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
@@ -104,8 +104,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Arkeo All-in-One API Documentation (v0.1)" class="md-header__button md-logo" aria-label="Arkeo All-in-One API Documentation (v0.1)" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../../assets/img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -240,8 +239,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Arkeo All-in-One API Documentation (v0.1)" class="md-nav__button md-logo" aria-label="Arkeo All-in-One API Documentation (v0.1)" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../../assets/img/logo.png" alt="logo">
 
     </a>
     Arkeo All-in-One API Documentation (v0.1)
@@ -1377,7 +1375,15 @@
 <h1 id="resistivity-routine-commands">Resistivity Routine Commands<a class="headerlink" href="#resistivity-routine-commands" title="Permanent link">&para;</a></h1>
 <p>This section lists the commands specific to the Resistivity routine.  </p>
 <h2 id="settings-json"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-2 12c-.25 0-.46-.18-.5-.42l-.37-2.65c-.63-.25-1.17-.59-1.69-.99l-2.49 1.01c-.22.08-.49 0-.61-.22l-2-3.46a.493.493 0 0 1 .12-.64l2.11-1.66L4.5 12l.07-1-2.11-1.63a.493.493 0 0 1-.12-.64l2-3.46c.12-.22.39-.31.61-.22l2.49 1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46.18.5.42l.37 2.65c.63.25 1.17.59 1.69.98l2.49-1c.22-.09.49 0 .61.22l2 3.46c.13.22.07.49-.12.64L19.43 11l.07 1-.07 1 2.11 1.63c.19.15.25.42.12.64l-2 3.46c-.12.22-.39.31-.61.22l-2.49-1c-.52.39-1.06.73-1.69.98l-.37 2.65c-.04.24-.25.42-.5.42zm1.25-18-.37 2.61c-1.2.25-2.26.89-3.03 1.78L5.44 7.35l-.75 1.3L6.8 10.2a5.55 5.55 0 0 0 0 3.6l-2.12 1.56.75 1.3 2.43-1.04c.77.88 1.82 1.52 3.01 1.76l.37 2.62h1.52l.37-2.61c1.19-.25 2.24-.89 3.01-1.77l2.43 1.04.75-1.3-2.12-1.55c.4-1.17.4-2.44 0-3.61l2.11-1.55-.75-1.3-2.41 1.04a5.42 5.42 0 0 0-3.03-1.77L12.75 4z"/></svg></span> Settings JSON<a class="headerlink" href="#settings-json" title="Permanent link">&para;</a></h2>
-<p>No settings are required for this routine</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;acquisition&quot;</span><span class="p">:{</span><span class="nt">&quot;V limit&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;device_dimension&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;Film Thickness (um)&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Length (mm)&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Width (mm)&quot;</span><span class="p">:</span><span class="mi">25</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="data-json"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg></span> Data JSON<a class="headerlink" href="#data-json" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1433,6 +1439,10 @@ Applies the specified current in A to the sample.</p>
 </code></pre></div>
 <hr />
 <h3 id="setdevicedimensions">SetDeviceDimensions<a class="headerlink" href="#setdevicedimensions" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated function</p>
+<p>These values are included in the settings json. This function is left in for compatibility</p>
+</div>
 <p><strong>Description</strong><br />
 Set the device dimensions to calculate the resistance correction.
 Please refer to the Arkeo manual for full details on the resistance correction calculations</p>
