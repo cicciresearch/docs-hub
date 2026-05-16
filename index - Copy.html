@@ -6,29 +6,17 @@
 
 <style>
 :root{
-    --primary:#7aa2ff;
-    --primary-hover:#5f89f5;
-    --primary-light:#1f2b4d;
-
-    --bg:#0f1117;
-    --bg-secondary:#171b24;
-    --card:#1b2230;
-
-    --text:#f2f5ff;
-    --muted:#aab3c5;
-
-    --border:#2b3447;
+    --primary:#3f51b5;
+    --primary-light:#e8ebff;
+    --text:#222;
+    --muted:#666;
 }
 
 /* BODY */
 body{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
     margin:0;
-    background:linear-gradient(
-        180deg,
-        #151925 0%,
-        #0f1117 350px
-    );
+    background:linear-gradient(180deg, #eef1fb 0%, #ffffff 350px);
     color:var(--text);
 }
 
@@ -59,12 +47,7 @@ body{
 /* DIVIDER */
 .divider{
     height:1px;
-    background:linear-gradient(
-        to right,
-        transparent,
-        var(--primary-light),
-        transparent
-    );
+    background:linear-gradient(to right, transparent, var(--primary-light), transparent);
     margin:30px 0;
 }
 
@@ -77,31 +60,30 @@ body{
 
 /* CARD */
 .card{
-    border:1px solid var(--border);
+    border:1px solid #e3e6f0;
     border-radius:10px;
     padding:20px;
     display:flex;
     gap:20px;
     align-items:center;
     transition:0.2s;
-    background:var(--card);
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.04);
 }
 
 .card:hover{
     border-color:var(--primary);
     transform:translateY(-3px);
-    box-shadow:0 10px 24px rgba(122,162,255,0.18);
+    box-shadow:0 8px 20px rgba(63,81,181,0.15);
 }
 
 /* IMAGE */
 .card img{
-    width:120px;
-    height:120px;
+    width:140px;
+    height:100px;
     object-fit:cover;
-    border-radius:12px;
-    background:#111827;
-    flex-shrink:0;
+    border-radius:6px;
+    background:#f0f2f8;
 }
 
 /* CONTENT */
@@ -137,7 +119,7 @@ body{
 }
 
 .link-block a:hover{
-    background:var(--primary-hover);
+    background:#2f3fa3;
 }
 
 /* DESCRIPTION */
@@ -165,7 +147,6 @@ body{
     height:100px;
     object-fit:contain;
 }
-
 </style>
 
 </head>
